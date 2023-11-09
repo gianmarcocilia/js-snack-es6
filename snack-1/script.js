@@ -1,47 +1,51 @@
 const bici = [
     {
         nome: "bicicletta1",
-        peso: "13kg"
+        peso: 13
     },
     {
         nome: "bicicletta2",
-        peso: "9kg"
+        peso: 9
     },
     {
         nome: "bicicletta3",
-        peso: "8kg"
+        peso: 8
     },
     {
         nome: "bicicletta4",
-        peso: "23kg"
+        peso: 23
     },
     {
         nome: "bicicletta5",
-        peso: "16kg"
+        peso: 16
     },
     {
         nome: "bicicletta6",
-        peso: "7kg"
+        peso: 7
     },
     {
         nome: "bicicletta7",
-        peso: "14kg"
+        peso: 14
     },
     {
         nome: "bicicletta8",
-        peso: "12kg"
+        peso: 12
     },
     {
         nome: "bicicletta9",
-        peso: "8kg"
+        peso: 8
     },
 ]
 
-const [  , , , , , leggera,] = bici;
-console.log(leggera);
+let pesoMinore = bici[0];
 
-const biciElem = document.querySelector("div");
-biciElem.innerHTML = `<h1>La bicicletta con peso minore è:</h1> 
-                    <h3>${leggera.nome} ${leggera.peso}</h3>`;
+bici.forEach((bicicletta) => {
+    if (bicicletta.peso < pesoMinore.peso) {
+        pesoMinore = bicicletta;
+    }
+})
+console.log(pesoMinore);
 
+const {nome, peso} = pesoMinore;
+document.getElementById("result").innerHTML = `<h1>La bicicletta con peso minore è: ${nome} con peso di ${peso}kg</h1>`;
 
