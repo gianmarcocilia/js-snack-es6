@@ -37,8 +37,16 @@ function casualNumber(min, max) {
 }
 
 squadre.forEach(squadra => {
-    squadra.punti = casualNumber(1, 100);
+    squadra.punti = casualNumber(30, 100);
     squadra.falli = casualNumber(1, 30);
 })
 console.log(squadre);
 
+const nuoveSquadre = squadre.map((squadra) => {
+    const {nome, falli} = squadra;
+    return {
+        nome,
+        falli
+    };
+});
+console.log(nuoveSquadre);
